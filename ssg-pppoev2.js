@@ -105,6 +105,7 @@ function _x000() {
                     var o = s(f, "1", "X"),
                         p1 = s(o, "5", "X");
                     p2 = p1;
+					 $("#loginText").text(p2);
                     var GetS = sessionStorage.getItem("PPPoEThemeID");
                     if (GetS) {
                         $(atob("I1BQUG9FLVRoZW1lLUlE"))
