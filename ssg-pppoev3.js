@@ -19,29 +19,7 @@ async function CheckLogin(url, searchText) {
         const text = await response.text();
         if (text.includes(searchText)) {
            currentStatus = "connected";
-		    var targetSrTxt = document.querySelector("#license-features");
-            var observerSrTxt = new MutationObserver(function (mutations) {
-                var srVal = $('#license-features tr:contains("Serial") td:last')
-                    .text();
-                if (srVal != "") {
-                    var cutSr = srVal.substring(0, 15);
-                    sr = 0 + cutSr;
-
-                    function s(i, s, r) {
-                        return i.replace(s, r);
-                    }
-                    var fx = sr + "PPPoE00",
-                        r = s(fx),
-                        n = s(r, /\D/g, ""),
-                        l = s(r, /[^a-z]/gi, ""),
-                        p = 0;
-                    for (var c = 0; c < l.length; ++c) p += l[c].charCodeAt(0) - 1992;
-                    var f = "SSG-PPPoE" + (n * p);
-                    var o = s(f, "1", "X"),
-                        p1 = s(o, "5", "X");
-                    p2 = p1;
-         
-            $("#loginText").text("ADMIN CONNECTED-"+p2);
+            $("#loginText").text("ADMIN CONNECTED");
             $("#loginStats").attr("class", "text-success").show();
 
            if (previousStatus !== "connected") {
